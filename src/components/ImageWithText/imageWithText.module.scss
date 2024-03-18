@@ -1,0 +1,21 @@
+@import "../../styles/utils";
+
+.img_with_text{
+    padding: 60px 0;
+    background-color: $bg-color-1;
+    scroll-margin-top: 50px;
+    .row{
+        --bs-gutter-x: 50px;
+        @include max(991.98){
+            --bs-gutter-x: 0px;
+            --bs-gutter-y: 50px;
+        }
+
+    }
+    .img_wrapper{
+        width: 100%;
+        figure{
+            --bs-aspect-ratio: calc((420/630)*100%);
+        }
+    }
+}

@@ -1,0 +1,13 @@
+@import "../../styles/utils";
+
+.specification_section{
+    padding: 60px 0;
+    background-color: $bg-color-1;
+    .cards_wrapper{
+        margin-top: 30px;
+        :global(.row){
+            --bs-gutter-x: 30px;
+            --bs-gutter-y: 30px;
+        }
+    }
+}

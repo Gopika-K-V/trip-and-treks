@@ -1,0 +1,101 @@
+@import "../../styles/utils";
+
+.main_header{
+    background-color: $bg-color-5;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: var(--bs-header-height);
+    top: 0;
+    z-index: 1025;
+    box-shadow: 0 4px 24px 0 rgba(0, 0, 0, .14);
+    display: flex;
+    align-items: center;
+
+    .header_container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .logo{
+            &_wrap{
+                display: block;
+            }
+            .logo_wrapper {
+                width: 165px;
+                margin-bottom: 0;
+                --bs-aspect-ratio: calc((75/165) * 100%);
+            }
+        }
+    }
+    .header_right_wrap{
+        .nav_list{
+            display: flex;
+            padding-inline-start: 0;
+            margin-bottom: 0;
+            list-style: none;
+            &_item{
+                .nav_link{
+                    padding: 10px 15px;
+                    font-size: 16px;
+                    font-weight: $regular;
+                    margin-bottom: 0;
+                    display: block;
+                    color: $white;
+                    font-family: $primary-font;
+                    transition: 0.3s all ease-in-out;
+                    text-decoration: none;
+                    @include hover{
+                        color: $primary-color;
+                    }
+                }
+                @include hover{
+                    .mega_menu_wrapper{
+                        pointer-events: all;
+                        visibility: visible;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.top_nav_contact{
+    display: flex;
+    align-items: center;
+    column-gap: 18px;
+    justify-content: flex-end;
+    padding-bottom: 15px;
+    padding-inline-end: 20px;
+    .contact_links{
+        text-decoration: none;
+        color: $white;
+        display: block;
+        transition: 0.3s color ease-in-out;
+        @include hover{
+            color: $primary-color;
+        }
+    }
+    &.footer{
+        justify-content: flex-start;
+        margin-top: 20px;
+        .contact_links{
+            color: $white;
+            @include hover{
+                color: $primary-color;
+            }
+        }
+    }
+}
+
+.mega_menu_wrapper{
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    background-color: $white;
+    width: calc(100vw - 300px);
+    left: 50%;
+    transform: translateX(-50%);
+    top: var(--bs-header-height);
+}
